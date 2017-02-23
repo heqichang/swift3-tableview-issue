@@ -28,6 +28,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        print("In cellForRow offset: \(tableView.contentOffset)")
+        
         let row = indexPath.row
         
         let colorIndex = row % 5
@@ -55,6 +58,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.num += 1
             self.tableView.reloadData()
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("In scroll: \(scrollView.contentOffset)")
     }
 
 }
